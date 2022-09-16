@@ -19,10 +19,9 @@ connection.connect();
 console.log("Server ready! :D");
 
 client.on('message', (_, tags, message, self) => {
-    // "Alca: Hello, World!"
     // console.log(`${tags['display-name']}: ${message}`);
 
-    connection.query('INSERT INTO message (id, username, is_mod, subscriber, message) VALUES (?, ?, ?, ?, ?)', [tags["id"], tags["username"], tags["mod"], tags["subscriber"], message], function(error, results, fields) {
+    connection.query('INSERT INTO message (id, username, is_mod, subscriber, message, user_id) VALUES (?, ?, ?, ?, ?, ?)', [tags["id"], tags["username"], tags["mod"], tags["subscriber"], message, tags["user-id"]], function(error, results, fields) {
         if (error) throw error;
     });
 });
