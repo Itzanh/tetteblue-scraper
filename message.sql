@@ -21,6 +21,7 @@ CREATE TABLE `message` (
 ALTER TABLE `message`
   ADD KEY `username` (`username`);
 ALTER TABLE `message` ADD FULLTEXT KEY `username_fts` (`username`);
+ALTER TABLE `message` ADD FULLTEXT KEY `message` (`message`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
