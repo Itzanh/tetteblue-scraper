@@ -2,7 +2,7 @@ const tmi = require('tmi.js');
 const mysql = require('mysql');
 
 const client = new tmi.Client({
-    channels: ['tetteblue', 'lubrinardo97']
+    channels: ['tetteblue']
 });
 
 const connection = mysql.createConnection({
